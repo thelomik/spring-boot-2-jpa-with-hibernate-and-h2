@@ -16,36 +16,27 @@ public class Employee {
     private Long id;
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.REMOVE)
     private List<Task> tasks;
 
     public Employee() {
     }
 
-    public Employee(Long id,String name,List<Task> tasks) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.tasks = tasks;
-    }
 
-    public Employee(int i){super();}
-
-    public Employee(String name) {
-        super();
-        this.name = name;
-
-    }
     public Employee(Long id,String name) {
         super();
         this.name = name;
         this.id = id;
 
     }
-
-    @Override
-    public String toString(){
-        return String.format("Employee [id=%s]",id);
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "name = " + name + ")";
+    }
 }

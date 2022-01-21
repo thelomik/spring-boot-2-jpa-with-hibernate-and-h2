@@ -20,22 +20,41 @@ public class Task {
     private List<Employee> employees;
 
 
-    public Task(Long id, String topic, List<Employee> employees) {
-        this.id = id;
-        this.topic = topic;
-        this.employees = employees;
+    public Task(int i) {
+        this.id = (long) i;
+    }
+
+    public Task(int i, String name) {
+        this.id = (long) i;
+        this.topic = name;
     }
 
     public Task() {
     }
 
-    public Task(int i){super();}
-    public Task(Long id,String topic) {
-        this.topic = topic;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
+    public List<Employee> getEmployees() {
+        return employees;
+    }
 
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
 
 
 }
